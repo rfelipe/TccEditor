@@ -1,0 +1,80 @@
+<?php header('Content-type:text/css');
+	require_once '../conecta.inc';
+
+	$rst = select('codcapa',1,'configcapa');
+
+	foreach ($rst as $key => $value) {
+		$codcapa	  	=	$value->codcapa;
+		$centralizacao	=  	$value->centralizacao_capa;
+		$tamanhoImagY	=	$value->tamanho_img_capa_y;
+		$tamanhoimagX	=	$value->tamanho_img_capa_x;
+		$paragrafo		=	$value->paragrafo_capa;
+		//$centralizacao_curso;
+		$tamanhoFonte 	=	$value->tamanho_fonte_capa;
+		$negrito 		=	$value->Negrito_capa;
+		$subitulominusculo = $value->subtitulo_caixa_baixa;
+		$tituloCaixaAlta   = $value->titulo_caixa_alt;
+}
+
+?>
+
+.capa{
+	width: 21cm;
+	height: 29.7cm;
+	align-items: center;
+	text-align: center;
+	font-family:Arial;
+	font-size: 14px;
+	font-weight: bold;
+	border-width:medium;
+ 	border-style:solid;
+ 	border-color:black;
+ 	text-transform: uppercase;
+
+ 	margin-top:		........define a margem superior;
+ 	margin-right:	......define a margem direita;
+ 	margin-bottom:	....define a margem inferior;
+ 	margin-left:	......define a margem esquerda;
+
+	}
+
+.imag{
+		width:<?php echo $tamanhoimagX ?>; 
+		height:<?php echo $tamanhoImagY ?>;
+	}
+
+/*.unidade{
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	}*/
+
+
+
+/*
+body{
+    font-family: Arial, Verdana, Tahoma, Sans-Serif;
+    color: #333333;
+    font-size: 12px;
+}
+p{
+    line-height: 20px;
+    text-align: justify;
+}
+h1{
+    font-size: 24px;
+    color: #003366;
+    text-transform: uppercase;
+}
+h2{
+    font-size: 14px;
+    padding: 5px;
+    background-color: #E3E3E3;
+    color: #4C4C4C;
+}
+span{
+    font-weight: bold;
+    color: #FF0000;
+    background-color: #FFFF00;
+}
+*/

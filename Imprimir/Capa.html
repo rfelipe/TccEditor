@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html moznomarginboxes mozdisallowselectionprint>
+<head> <link rel="stylesheet" type="text/css" href="../Css/capa.php" />
+</head>
+	<body>
+		<div class='folha'>
+			<div class='capa'>
+				<div>
+				<img  class='imag'src=<?php echo '../ImagUp/'.$oCapa->get_imgCapa();?>>
+				<p class='p'>
+				<span class='unidade'><?php echo $oCapa->get_unidade() ?></span>
+				<p class='p'>
+				<span class='curso'><?php echo $oCapa->get_curso() ?></span>
+				<p class='p'>
+				<span class='nome'><?php echo $oCapa->get_nomePessoa() ?></span>
+				<p class='p'>
+				<span class='nomeprojeto'><?php echo $oCapa->get_nomeProjeto() ?></span>
+				<p class='p'>
+				</div>
+				<div>
+				<span class='cidade'><?php echo $oCapa->get_cidade() ?></span><p class='p0'>
+				<?php echo date ('Y') ?>
+				</div>		
+			</div>
+		</div>
+	</body>
+</hml>

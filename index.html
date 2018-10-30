@@ -1,0 +1,46 @@
+﻿<html>
+<head>
+<title>Tcc Editor</title>
+</head>
+<body>
+<script>
+	function validaForm(){
+        d = document.cadastro;
+		//validar usuario
+		if (d.usuario.value == ""){
+			alert("O campo " + d.usuario.name + " deve ser preenchido!");
+			d.usuario.focus();
+			return false;
+		}
+		//validar senha
+		if (d.senha.value == ""){
+			alert("O campo " + d.senha.name + " deve ser preenchido!");
+			d.senha.focus();
+			return false;
+		}
+		return true;
+	}
+</script>
+<form name="cadastro" action="./LogInOut/logar.php" method="post" onSubmit="return validaForm()">
+  <div align="center">
+    <div align="center"class="logo">
+	</div>
+    <center>
+    <table border="" width="%" bgcolor="">
+      <tr>
+        <td width="100%">
+          <p align="center"><b>Autenticação de Usuarios<br>
+          <br>
+          Username..:</b><input type="text" name="usuario" size="20"><br><br>
+  <b>Password....:</b><input type="Password" name="senha" size="20"></p>
+  <p align="left"><input type="submit" value="Envia" name="B1">
+  <input type="reset" value="Limpar" name="B2"> <b><font face="Arial" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+  <br>
+         </td>
+      </tr>
+    </table>
+    </center>
+  </div>
+</form>
+</body>
+</html>
