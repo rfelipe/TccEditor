@@ -35,7 +35,7 @@
 			return ($dados_encontrados);	
 		}
 			
-		//Inserir Pessoa
+	//Inserir Pessoa
 			function insertPessoa($a,$b){
 		    $conn=conecta();		
 			$statement = $conn->prepare('INSERT INTO pessoa(nome, senha) 
@@ -65,6 +65,14 @@
 			$statement = $conn->prepare('INSERT INTO resumo(textoresumo, folharosto, codprojeto) 
 			VALUES(?,?,?)');
 			$statement->execute(array($a,$b,$c));					
+		}
+
+	//Inserir Capitulo;
+	function insertCapitulo($a,$b,$c,$d,$e){
+		    $conn=conecta();		
+			$statement = $conn->prepare('INSERT INTO capitulo(codrefimagem ,textocapitulo,textodecorra,codprojeto,subcod) 
+			VALUES(?,?,?,?,?)');
+			$statement->execute(array($a,$b,$c,$d,$e));					
 		}
 
 

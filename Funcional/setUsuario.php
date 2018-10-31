@@ -5,11 +5,11 @@
 	include '../LogInOut/verifica.php';
 
 
-/*	$rst = selectPessoa('Felipe Souza Rodrigues');
+	$rst = selectPessoa($_SESSION['nome'],$_SESSION['senha']);
 			foreach($rst as $key => $value){
 			$codPessoa	=  $value->codpessoa;
 			$nome 		=  $value->nome;
-			}*/
+			}
 
 	$oPessoa = new Pessoa();
 	$oPessoa->set_codPessoa($codPessoa);
