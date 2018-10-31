@@ -1,34 +1,33 @@
 <?php
 require_once '../conecta.inc';
 
-$usuario = $_POST['usuario'];
-$senha = $_POST['senha'];
+$usuario = $_POST['nome'];
+$senha 	 = $_POST['senha'];
+
 
 if(conecta()){
-	$num = selectPessoa($usuario,$senha);
+	$rst = selectPessoa($usuario,$senha);
 
-	if($num > 0){
+	if(!empty($rst)){
 		
 			//Retorna os dados do banc
-			//$num = selectPessoa($usuario,$senha);
+			$num = selectPessoa($usuario,$senha);
 			foreach($num as $key => $value){
-			$codpessoa=  $value->codpessoa;
+			$codpessoa=$value->codpessoa;
+			$usuario 	=  $value->nome;
 			$senha 	=  $value->senha;
-			$nome 	=  $value->nome;
 			}
-		
+			
 			session_start();
 			$_SESSION['codpessoa']= $codpessoa;
-			$_SESSION['senha']	= $senha;
-			$_SESSION['nome']	= $nome;
+			$_SESSION['nome']	  = $usuario;
+			$_SESSION['senha']	  = $senha;
 
     		echo "<meta http-equiv='refresh' content='5;URL=../Funcional/selecionatrabalhos.php'>";
 		}
 else
 	{
-		//Encerra a conexão com o banco
-		//Caso nenhuma linha seja retornada emite o alerta e retorna
-		echo("<script type='text/javascript'> alert('Usuário não cadastrado!'); location.href='index.html';</script>");
+		echo("<script type='text/javascript'> alert('Usuário não cadastrado!'); location.href='../index.html';</script>");
         
 	}
 }
