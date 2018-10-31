@@ -1,6 +1,6 @@
 <?php
-require_once '../Funcional/setUsuario.php';
-
+include '../LogInOut/verifica.php';
+require_once '../conecta.inc';
 ?>
 
 <!DOCTYPE html>
@@ -8,16 +8,19 @@ require_once '../Funcional/setUsuario.php';
 <head> <include >
 </head>
 	<body>
-		<hr>
 		<h1>::Novo Capitulo::</h1>
-			<form method='POST' action='formCapaSave.php' enctype="multipart/form-data">
+			<form method='POST' action='formCapituloSave.php' enctype="multipart/form-data">
 
 				<label> Titulo Capitulo:
 					<input type="text" name="titulo">
 				</label>
 			<p>
 				<label> Texto:
-					<textarea type="text" name="texto">
+					<textarea type="text" name="texto"></textarea>
+				</label>
+			<p>				
+				<label> Descrição imagem:
+					<input type="text" name="refimagem">
 				</label>
 			<p>
 				<label> Imagem:

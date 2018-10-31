@@ -12,5 +12,5 @@ require_once '../Modelos/classProjeto.php';
    $oProjeto->get_codPessoa()
    );
                
-  echo("<script type='text/javascript'> alert('Inclcusão de Capa realizada com sucesso!'); location.href='formFolhaRosto.php';</script>");
+  echo("<script type='text/javascript'> alert('Inclcusão de Capa realizada com sucesso!'); location.href='formCapa.php';</script>");
 ?>
