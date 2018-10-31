@@ -18,7 +18,7 @@ if(conecta()){
 			}
 		
 			session_start();
-			//$_SESSION['codpessoa']= $codpessoa;
+			$_SESSION['codpessoa']= $codpessoa;
 			$_SESSION['senha']	= $senha;
 			$_SESSION['nome']	= $nome;
 
