@@ -34,7 +34,14 @@
 			$dados_encontrados = $data->fetchAll(PDO::FETCH_OBJ);
 			return ($dados_encontrados);	
 		}
-		
+			
+		//Inserir Pessoa
+			function insertPessoa($a,$b){
+		    $conn=conecta();		
+			$statement = $conn->prepare('INSERT INTO pessoa(nome, senha) 
+			VALUES(?,?)');
+			$statement->execute(array($a,$b));					
+		}
 
 	//Inserir Dados Projeto;
 	function insertProjeto($a,$b){
