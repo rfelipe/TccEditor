@@ -22,7 +22,7 @@ if(conecta()){
 			$_SESSION['codpessoa']= $codpessoa;
 			$_SESSION['nome']	  = $usuario;
 			$_SESSION['senha']	  = $senha;
-
+			
     		echo "<meta http-equiv='refresh' content='5;URL=../Funcional/selecionatrabalhos.php'>";
 		}
 else

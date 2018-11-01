@@ -7,7 +7,7 @@ include '../LogInOut/verifica.php';
 
 
 //select(campo,valor,$tabela);
-$codprojeto=$_GET['id'];
+$codprojeto=$_SESSION['codprojeto'];
 
 	$selecCapa = select('codprojeto',$codprojeto,'capa');
 	$oCapa = new Capa(); 

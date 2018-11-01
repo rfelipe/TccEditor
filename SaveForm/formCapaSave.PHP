@@ -9,9 +9,8 @@ $uploaddir = '../ImagUp/'.$_FILES["capaImagem"]["name"];
 $uploadfile = $_FILES["capaImagem"]["tmp_name"];
 move_uploaded_file( $uploadfile, $uploaddir );
 
-
    //set_idCapa($_POST[]);
-   $oCapa->set_codProjeto(1); 
+   $oCapa->set_codProjeto($oProjeto->get_codProjeto()); 
    $oCapa->set_imgCapa($_FILES["capaImagem"]["name"]); 
    $oCapa->set_unidade($_POST["capaUnidade"]);
    $oCapa->set_curso($_POST["capaCurso"]);
@@ -27,7 +26,8 @@ move_uploaded_file( $uploadfile, $uploaddir );
                $oCapa->get_nomeFaculdade(),
                $oCapa->get_cidade(),
                $oCapa->get_nomePessoa(),
-               '1');
+               $oCapa->get_codProjeto()
+            );
 
   echo("<script type='text/javascript'> alert('Inclcusão de Capa realizada com sucesso!'); location.href='formFolhaRosto.php';</script>");
 ?>

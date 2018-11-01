@@ -4,7 +4,6 @@
 	require_once '../conecta.inc';
 	include '../LogInOut/verifica.php';
 
-
 	$rst = selectPessoa($_SESSION['nome'],$_SESSION['senha']);
 			foreach($rst as $key => $value){
 			$codPessoa	=  $value->codpessoa;
@@ -23,7 +22,7 @@
 	}
 
 	$oProjeto = new Projeto();
-	$oProjeto->set_codProjeto($codProjeto);
+    $oProjeto->set_codProjeto($_SESSION['idprojeto']);
 	$oProjeto->set_nomeProjeto($nomeProjeto);
 	$oProjeto->set_codPessoa($projPessoa);
 

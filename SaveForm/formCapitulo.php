@@ -26,8 +26,8 @@ require_once '../conecta.inc';
 				<label> Imagem:
 					<input type="file" name="capituloImagem" accept="image/*">
 				</label>
-			<input type="submit" value="Salvar Capa" action="submit"> 
-			
+			<input type="submit" name="ncapitulo" value="Criar Novo capitulo" 	 action="submit"> 
+			<input type="submit" name="pular"value="Salvar ir proxima etapa" action="submit">
 			</form>
 	</body>
 </hml>
