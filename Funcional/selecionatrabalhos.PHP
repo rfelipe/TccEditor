@@ -19,6 +19,7 @@ require_once '../Modelos/classProjeto.php';
 	<td scope="col">
 						<a  href="../Funcional/imprimir.php?id=<?php echo $value->codprojeto?>" >
 							<?php print $nomeProjeto = $value->nomeprojeto;?>
+							<? $_SESSION['codprojeto']= $value->codprojeto?>
 						</a>
 					</td>
 	</tr>

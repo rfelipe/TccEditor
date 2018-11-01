@@ -8,7 +8,7 @@ $uploaddir = '../ImagUp/'.$_FILES["capituloImagem"]["name"];
 $uploadfile = $_FILES["capituloImagem"]["tmp_name"];
 move_uploaded_file( $uploadfile, $uploaddir );
 
-   $oCapitulo->set_codProjeto(1); 
+   $oCapitulo->set_codProjeto($oProjeto->get_codProjeto()); 
    $oCapitulo->set_codRefImagem($_FILES["capituloImagem"]["name"]); 
    $oCapitulo->set_textoCapitulo($_POST['titulo']);
    $oCapitulo->set_textoDecorra($_POST['texto']);
@@ -21,5 +21,10 @@ move_uploaded_file( $uploadfile, $uploaddir );
                   $oCapitulo->get_subcod()
                );
 
-  echo("<script type='text/javascript'> alert('Inclcusão de Capa realizada com sucesso!'); location.href='formFolhaRosto.php';</script>");
+if(isset($_POST["ncapitulo"])){
+     echo("<script type='text/javascript'> alert('Inclcusão de Capa realizada com sucesso!'); location.href='formCapitulo.php';</script>");
+} 
+else if(isset($_POST["pular"])){
+      echo("<script type='text/javascript'> alert('nova etapa a definir!'); </script>");
+} 
 ?>

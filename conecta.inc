@@ -48,7 +48,9 @@
 		    $conn=conecta();		
 			$statement = $conn->prepare('INSERT INTO projeto(nomeprojeto, codpessoa) 
 			VALUES(?,?)');
-			$statement->execute(array($a,$b));					
+			$statement->execute(array($a,$b));
+			$res=$conn->lastInsertId();
+			return $res;
 		}
 
 	//Inserir Dados Capa;
