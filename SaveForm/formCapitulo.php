@@ -5,7 +5,7 @@ require_once '../conecta.inc';
 
 <!DOCTYPE html>
 <html>
-<head> <include >
+<head>
 </head>
 	<body>
 		<h1>::Novo Capitulo::</h1>
@@ -26,7 +26,7 @@ require_once '../conecta.inc';
 				<label> Imagem:
 					<input type="file" name="capituloImagem" accept="image/*">
 				</label>
-			<input type="submit" name="ncapitulo" value="Criar Novo capitulo" 	 action="submit"> 
+			<input type="submit" name="ncapitulo" value="Criar Novo capitulo"action="submit"> 
 			<input type="submit" name="pular"value="Salvar ir proxima etapa" action="submit">
 			</form>
 	</body>

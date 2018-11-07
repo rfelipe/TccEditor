@@ -22,9 +22,9 @@ move_uploaded_file( $uploadfile, $uploaddir );
                );
 
 if(isset($_POST["ncapitulo"])){
-     echo("<script type='text/javascript'> alert('Inclcusão de Capa realizada com sucesso!'); location.href='formCapitulo.php';</script>");
+     echo("<script type='text/javascript'> alert('Capitulo salvo!'); location.href='formCapitulo.php';</script>");
 } 
 else if(isset($_POST["pular"])){
-      echo("<script type='text/javascript'> alert('nova etapa a definir!'); </script>");
+      echo("<script type='text/javascript'> alert('nova etapa a definir!');location.href='formReferencia.php'; </script>");
 } 
 ?>
