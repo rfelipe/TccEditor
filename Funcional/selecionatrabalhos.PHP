@@ -13,13 +13,13 @@ require_once '../Modelos/classProjeto.php';
 
 <table width="60%" border="0" cellspacing="2" cellpadding="2" cellspacing="2">
 
+	<tr>Nome projeto
 <?php
 	foreach($rst as $value){ ?>
-	<tr>Nome projeto
 	<td scope="col">
 						<a  href="../Funcional/imprimir.php?id=<?php echo $value->codprojeto?>" >
-							<?php print $nomeProjeto = $value->nomeprojeto;?>
-							<? $_SESSION['codprojeto']= $value->codprojeto?>
+							<?php print $nomeProjeto = $value->nomeprojeto; ?>
+							<?php $_SESSION['codprojeto']= $value->codprojeto;?>
 						</a>
 					</td>
 	</tr>
