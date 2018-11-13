@@ -3,7 +3,7 @@ class Resumo {
     private $codResumo;
     private $codProjeto;
     private $textoResumo;
-    private $abstract;
+    private $objetivo;
     private $folharosto;
 
     function set_codResumo($codResumo) {
@@ -12,8 +12,8 @@ class Resumo {
     function set_textoResumo($textoResumo) {
         $this->textoResumo = $textoResumo;
     }
-    function set_abstract($abstract) {
-        $this->abstract = $abstract;
+    function set_objetivo($objetivo) {
+        $this->objetivo = $objetivo;
     }
     function set_codProjeto($codProjeto) {
         $this->codProjeto = $codProjeto;
@@ -31,12 +31,12 @@ class Resumo {
     function get_textoResumo(){
         return $this->textoResumo;
     }
-    function get_abstract(){
-    	return $this->abstract;
+    function get_objetivo(){
+    	return $this->objetivo;
     }
     function get_folharosto(){
         return $this->folharosto;
     }
 
 }
-?> 
+?>

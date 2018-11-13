@@ -8,11 +8,9 @@
 		$tamanhoImagY	=	$value->tamanho_img_capa_y;
 		$tamanhoimagX	=	$value->tamanho_img_capa_x;
 		$paragrafo		=	$value->paragrafo_capa;
-		//$centralizacao_curso;
 		$tamanhoFonte 	=	$value->tamanho_fonte_capa;
 		$negrito 		=	$value->Negrito_capa;
-		//$subitulominusculo = $value->subtitulo_caixa_baixa;
-		$tituloCaixaAlta   = $value->titulo_caixa_alt;
+		$tituloCaixaAlta   = $value->titulo_caixa_alta;
 		}
 
 	$rstFolha = select('codfolha',1,'tamanhofolha');
@@ -28,7 +26,6 @@
 
 	$rstfolharosto = select('idfolharosto',1,'cssfolhaderosto');
 	foreach ($rstfolharosto as $key => $value) {
-		//$rIdfolharosto = $value->idfolharosto;
 		$posnome = $value->pos_nome;
 		$nomefonte = $value->nome_fonte;
 		$Dadoscentralizacao = $value->dados_centralizacao;
@@ -39,6 +36,10 @@
 		$objetivonegrito = $value->objetivo_negrito;
 		$nomeorientadorpos = $value->nome_orientador_pos;
 	}
+	$rstCapitulo = select('idcapitulos',1,'csscapitulo');
+	foreach ($rstCapitulo as $key => $value) {
+		$capcentralizado=$value->capcentralizado;
+	}
 
 ?>
 	.{
@@ -47,11 +48,9 @@
 .folha{
 	width: 			<?php echo $fwidth.'cm' ?>;		
 	height: 		<?php echo $fheight.'cm' ?>;
-
-
-<!--  	border-style:solid;
 	border-width:medium;
- 	border-color:black; -->
+ 	border-style:solid;
+ 	border-color:black;
 }
 .capa{
 	align-items: 	<?php echo $centralizacao ?>;
@@ -59,12 +58,11 @@
 	font-family:	'Arial';
  	font-size: 		<?php echo $tamanhoFonte.'px' ?>;
 	font-weight:	<?php echo ($negrito  == 1) ? 'bold': '' ?>;
- 	text-transform: <?php echo ($tituloCaixaAlta == 1) ? '':'Uppercase'?>;
+ 	text-transform: <?php echo ($tituloCaixaAlta == 0) ? '':'Uppercase'?>;
  	margin-top:		<?php echo $fMargemU.'cm' ?>;
  	margin-right:	<?php echo $fMargemR.'cm' ?>;
  	margin-bottom:	<?php echo $fMargemD.'cm' ?>;
  	margin-left:	<?php echo $fMargemL.'cm' ?>;
-
 	}
 .p{
 	line-height: 4.65cm ;
@@ -82,32 +80,74 @@
 	align-items: 	<?php echo $centralizacao ?>;
 	text-align: 	<?php echo $centralizacao ?>;
 	font-family:	'Arial';
+	margin-top:		<?php echo $fMargemU.'cm' ?>;
  	margin-right:	<?php echo $fMargemR.'cm' ?>;
  	margin-bottom:	<?php echo $fMargemD.'cm' ?>;
  	margin-left:	<?php echo $fMargemL.'cm' ?>;
- 	
-	}
+}
 
 .texto{
-
 	align-items:<?php echo $objetivocentralizacao ?>;
 	text-align:<?php echo $objetivocentralizacao ?>;
 	font-size:<?php echo $objetivotamanhofonte.'px' ?>;
 	margin-left:<?php echo $objetivobordapos.'cm' ?>;
 	margin-right:	<?php echo $fMargemR.'cm' ?>;
 	font-weight:<?php echo ($objetivonegrito  == 1) ? 'bold': '' ?>;
-
 }
-.nome, .cidade, .nomeprojeto{
 
+.nome, .cidade, .nomeprojeto{
  	font-size: 		<?php echo $tamanhoFonte.'px' ?>;
- 	text-transform: <?php echo ($tituloCaixaAlta == 1) ? '':'Uppercase'?>;
+ 	text-transform: <?php echo ($tituloCaixaAlta == 0) ? '':'Uppercase'?>;
 	font-weight:	<?php echo ($negrito  == 1) ? 'bold': '' ?>;
 }
+
 .prosto{
 	line-height: 9.70cm;
 }
 
-.noprint{
-	display:none;
+.Resumo{
+	
+	font-size:<?php echo $objetivotamanhofonte.'px' ?>;
+	font-family:	'Arial';
+ 	margin-right:	<?php echo $fMargemR.'cm' ?>;
+ 	margin-bottom:	<?php echo $fMargemD.'cm' ?>;
+ 	margin-left:	<?php echo $fMargemL.'cm' ?>;
+}
+.nomeprojeto2{
+	align-items: 	<?php echo $centralizacao ?>;
+	text-align: 	<?php echo $centralizacao ?>;
+ 	font-size: 		<?php echo $tamanhoFonte.'px' ?>;
+ 	text-transform: <?php echo ($tituloCaixaAlta == 0) ? '':'Uppercase'?>;
+	font-weight:	<?php echo ($negrito  == 1) ? 'bold': '' ?>;
+	margin-top:		<?php echo $fMargemU.'cm' ?>;
+	margin-bottom:	1.5cm;
+}
+
+.alinhadireita{
+	text-align:right;
+	margin-bottom:	1.5cm;
+}
+.textoSimples{
+	font-size:<?php echo $objetivotamanhofonte.'px' ?>;
+}
+.textoSimplesb{
+	font-size:<?php echo $objetivotamanhofonte.'px' ?>;
+	font-weight:<?php echo ($objetivonegrito  == 1) ? 'bold': '' ?>;
+}
+
+.textoCapitulo{
+	text-align:<?php echo $objetivocentralizacao ?>;
+	font-family:	'Arial';
+	font-size:		<?php echo $objetivotamanhofonte.'px' ?>;
+ 
+	}
+.palavra-Chave{
+	align-items:left;
+	text-align:left;
+	font-size:<?php echo $objetivotamanhofonte.'px' ?>;	
+	font-family:	'Arial';
+	font-weight:<?php echo ($objetivonegrito  == 0) ? 'bold': '' ?>;
+ 	margin-right:	<?php echo $fMargemR.'cm' ?>;
+ 	margin-bottom:	<?php echo $fMargemD.'cm' ?>;
+ 	margin-left:	<?php echo $fMargemL.'cm' ?>;
 }

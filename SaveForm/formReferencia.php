@@ -19,7 +19,7 @@ require_once '../conecta.inc';
 				</label>
 			<p>				
 				<label> Endereço:
-					<input type="text" name="refimagem">
+					<input type="text" name="endereco">
 				</label>
 			<p>
 				<label> Data do acesso:
