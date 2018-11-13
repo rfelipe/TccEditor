@@ -5,9 +5,7 @@ require_once '../conecta.inc';
 
    $oResumo = new Resumo();
 
-   //$oResumo->set_codResumo($_POST[""]);
    $oResumo->set_textoResumo($_POST["natureza"]);
-   //$oResumo->set_abstract("");
    $oResumo->set_folharosto(1);
    $oResumo->set_codProjeto($oProjeto->get_codProjeto());
 
@@ -16,5 +14,5 @@ insertResumoRosto($oResumo->get_textoResumo(),
                   $oResumo->set_codProjeto()
               	);
 
-  echo("<script type='text/javascript'> alert('Inclcusão da folha de rosto realizada com sucesso!'); location.href='formCapitulo.php';</script>");
+  echo("<script type='text/javascript'> alert('Inclcusão da folha de rosto realizada com sucesso!'); location.href='formResumoObjetivo.php';</script>");
 ?>

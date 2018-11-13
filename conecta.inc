@@ -34,6 +34,13 @@
 			$dados_encontrados = $data->fetchAll(PDO::FETCH_OBJ);
 			return ($dados_encontrados);	
 		}
+	function select2($Coluna,$id,$colunax,$idx,$tabela){
+			$conn=conecta();			
+			$data = $conn->query('SELECT * FROM ' . $tabela . ' WHERE '
+			 .$Coluna. ' = ' . $conn->quote($id). ' AND '. $colunax . ' = ' . $conn->quote($idx));
+			$dados_encontrados = $data->fetchAll(PDO::FETCH_OBJ);
+			return ($dados_encontrados);	
+		}
 			
 	//Inserir Pessoa
 			function insertPessoa($a,$b){
@@ -61,12 +68,19 @@
 			$statement->execute(array($a,$b,$c,$d,$e,$f,$g,$h));					
 		}
 
-	//Inserir Dados Resumo e folha de rosto;
+	//Inserir Dados folha de rosto;
 	function insertResumoRosto($a,$b,$c){
 		    $conn=conecta();		
 			$statement = $conn->prepare('INSERT INTO resumo(textoresumo, folharosto, codprojeto) 
 			VALUES(?,?,?)');
 			$statement->execute(array($a,$b,$c));					
+		}
+		//Inserir Dados Resumo objetivo;
+	function insertResumoObjetivo($a,$b,$c,$d){
+		    $conn=conecta();		
+			$statement = $conn->prepare('INSERT INTO resumo(textoresumo, folharosto, objetivo, codprojeto) 
+			VALUES(?,?,?,?)');
+			$statement->execute(array($a,$b,$c,$d));					
 		}
 
 	//Inserir Capitulo;

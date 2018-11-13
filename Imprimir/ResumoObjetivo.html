@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html moznomarginboxes mozdisallowselectionprint>
+<head> <!-- <link rel="stylesheet" type="text/css" href="../Css/capa.php" /> -->
+</head>
+	<body>
+		<div class='folha'>
+				<div class='nomeprojeto2'>
+					<span ><?php echo $oCapa->get_nomeProjeto() ?></span>
+				</div>
+			<div class='Resumo'>
+				<p class='presumo'>
+					<div class='alinhadireita'>
+						<span class='textoSimplesb'><?php echo $oCapa->get_nomePessoa() ?></span>
+							<p class='presumo'>
+						<span class='textoSimples'>Autor(a)</span>
+							<p class='presumo'>
+						<span class='textoSimplesb'>Colocar dados do orientador</span>
+							<p class='presumo'>
+						<span class='textoSimples'>Orientador (a):Prof. ME.</span>
+							<p class='presumo'>
+						<span class='textoSimples'>meu email </span>
+						<p class='p'>
+					</div>
+				<p class='p'>
+					<div class='textoCapitulo'>
+						<span><b>Resumo:</b> <?php echo $oResumo->get_textoResumo() ?></span>
+					</div>
+				<p class='presumo'>
+					<span class='Palavra-Chave'><b>Palavra-Chave:</b>
+						<?php echo $oResumo->get_objetivo() ?></span>
+				<p class='presumo'>
+		
+			</div>
+		</div>
+	</body>
+</hml>

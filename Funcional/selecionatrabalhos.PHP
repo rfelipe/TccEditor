@@ -15,7 +15,7 @@ require_once '../Modelos/classProjeto.php';
 
 	<tr>Nome projeto
 <?php
-	foreach($rst as $value){ ?>
+	foreach($rst as $value){ echo $_SESSION['codprojeto']= $value->codprojeto; ?>
 	<td scope="col">
 						<a  href="../Funcional/imprimir.php?id=<?php echo $value->codprojeto?>" >
 							<?php print $nomeProjeto = $value->nomeprojeto; ?>
