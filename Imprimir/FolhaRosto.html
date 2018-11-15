@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html moznomarginboxes mozdisallowselectionprint>
-<head> <!-- <link rel="stylesheet" type="text/css" href="../Css/capa.php" /> -->
+<head> 
 </head>
 	<body>
-		<div class='folha'>
+		<div class='folha breack'>
 			<div class='folhaRosto'>
-					<span class='nome'><?php echo $oCapa->get_nomePessoa() ?></span>
+					<span class='nomeR'><?php echo $oCapa->get_nomePessoa() ?></span>
 				<p class='prosto'>
 					<span class='nomeprojeto'><?php echo $oCapa->get_nomeProjeto() ?></span>
 				<p class='prosto'>
@@ -15,10 +15,10 @@
 				<p class='prosto'>
 					<span class='nome'>colocar dados do orientador</span>
 				<p class='prosto'>
-					<div class='cidade'>
-						<span ><?php echo $oCapa->get_cidade() ?><p><?php echo date ('Y') ?></span>
-					</div>	
-		
+					<div>
+						<span class='cidade'><?php echo $oCapa->get_cidade() ?>
+						<p><?php echo date ('Y') ?></span>
+					</div>
 			</div>
 		</div>
 	</body>

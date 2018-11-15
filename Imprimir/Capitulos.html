@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html moznomarginboxes mozdisallowselectionprint>
+<head> 
+</head>
+	<body>
+		<div class='folha breack'>
+					<div class='capitulo'>
+						<div class='textoCapitulo1'>
+						<span class=''><?php echo $oCapitulo->get_textoCapitulo() ?>
+						</span>
+					</div>
+							<p class='espaco'>
+							<div class='paragrafo'>
+								<span class='textoCapitulo2'><?php echo $oCapitulo->get_textoDecorra() ?>
+								</span>
+							</div>
+								<p class='espaco'>
+							<div class='paragrafo'>
+								<span class='textoImagem'><?php echo $oCapitulo->get_subcod() ?></span>
+							</div>
+							<p class='espaco'>
+						<img  class='breack' src=<?php echo '../ImagUp/'.$oCapitulo->get_codRefImagem()?>>
+					</div>
+		</div>
+	</body>
+</hml>
