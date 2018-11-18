@@ -1,5 +1,5 @@
 <?php
-class Refencia {
+class Referencia {
   private $codreferencia;
   private $codprojeto;
   private $autor;
@@ -10,52 +10,42 @@ class Refencia {
    
    
     function set_codrefencia($codreferencia) {
-        $this->$codreferencia = $codreferencia;
+        $this->codreferencia = $codreferencia;
     }
-
     function set_codprojeto($codprojeto) {
-        $this->$codprojeto = $codprojeto;
+        $this->codprojeto = $codprojeto;
     }
-
     function set_autor($autor) {
-        $this->$autor = $autor;
+        $this->autor = $autor;
     }
-
     function set_titulo($titulo) {
-        $this->$titulo = $titulo;
+        $this->titulo = $titulo;
     }
-
     function set_endereco($endereco) {
-        $this->$endereco = $endereco;
+        $this->endereco = $endereco;
     }
-
     function set_acessado($acessado) {
-        $this->$acessado = $acessado;
+        $this->acessado = $acessado;
     }
 
 
     function get_codreferencia() {
-        return $this->$codreferencia ;
+        return $this->codreferencia ;
     }
-
     function get_codprojeto() {
-        return $this->$codprojeto ;
+        return $this->codprojeto;
     }
-
-    function get_autor() {
-        return $this->$autor ;
+    function get_autor(){
+        return $this->autor;
     }
-
     function get_titulo() {
-        return $this->$titulo ;
+        return $this->titulo;
     }
-
     function get_endereco() {
-        return $this->$codreferencia ;
+        return $this->codreferencia;
     }
-
     function get_acessado() {
-        return $this->$acessado ;
+        return $this->acessado;
     }
 }
 ?> 

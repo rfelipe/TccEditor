@@ -173,3 +173,18 @@
 .paragrafo{
 	text-indent:1.5cm;
 }
+.justifica{
+	align-items:<?php echo $objetivocentralizacao ?>;
+	text-align:<?php echo $objetivocentralizacao ?>;
+	font-size:<?php echo $objetivotamanhofonte.'px' ?>;
+	}
+.titulo{
+	text-transform:Uppercase;
+	font-weight:bold;
+	}
+.autor{
+	text-transform:Uppercase;
+	}
+.titulolivro{
+	font-weight:bold;
+	}
