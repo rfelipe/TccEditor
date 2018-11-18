@@ -91,7 +91,14 @@
 			$statement->execute(array($a,$b,$c,$d,$e));					
 		}
 
+	//Inserir Dados Referencia;
+	function insertReferencia($a,$b,$c,$d,$e){
+		    $conn=conecta();		
+			$statement = $conn->prepare('INSERT INTO referencia(codprojeto, autor, titulo, endereco, acessado) 
+			VALUES(?,?,?,?,?)');
+			$statement->execute(array($a,$b,$c,$d,$e));
 
+		}
 
 	//UPdate de dados do Funcionario ;	
 	function insertUpdate($a,$b,$c,$d,$e,$f,$g,$id){

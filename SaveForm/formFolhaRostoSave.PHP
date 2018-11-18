@@ -11,7 +11,7 @@ require_once '../conecta.inc';
 
 insertResumoRosto($oResumo->get_textoResumo(),
                   $oResumo->get_folharosto(),
-                  $oResumo->set_codProjeto()
+                  $oResumo->get_codProjeto()
               	);
 
   echo("<script type='text/javascript'> alert('Inclcusão da folha de rosto realizada com sucesso!'); location.href='formResumoObjetivo.php';</script>");
