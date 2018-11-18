@@ -14,7 +14,7 @@ insertResumoObjetivo(
 					$oResumo->get_textoResumo(),
                   	$oResumo->get_folharosto(),
                   	$oResumo->get_objetivo(),
-                  	$oResumo->set_codProjeto()
+                  	$oResumo->get_codProjeto()
               	);
 
   echo("<script type='text/javascript'> alert('Inclcusão da Resumo Objetivo realizada com sucesso!'); location.href='formCapitulo.php';</script>");

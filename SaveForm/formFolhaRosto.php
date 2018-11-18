@@ -2,7 +2,7 @@
 require_once '../Funcional/setUsuario.php';
 require_once '../Modelos/classCapa.php';
 
-	$rst = select('codprojeto',1,'capa');
+	$rst = select('codprojeto',$oProjeto->get_codProjeto(),'capa');
 	$oCapa = new Capa(); 
 
 	foreach ($rst as $key => $value) {

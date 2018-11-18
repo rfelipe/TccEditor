@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html moznomarginboxes mozdisallowselectionprint>
+<head> <title><?php echo $oCapa->get_nomeProjeto() ?></title> 
+	<link rel="stylesheet" type="text/css" href="../Css/Css.php" />
+</head>
+	<body>
+		<div class='folha'>
+			<div class='Refencia'>
+				<div>
+				<center><span class='titulo'>REFERÊNCIAS BIBLIOGRÁFICA</center></span>
+				<p>
+					<div class='justifica'>
+					<span class='autor'><?php echo $oReferencia->get_autor() ?>.</span>
+					<span class='titulolivro'><?php echo $oReferencia->get_titulo() ?>.</span>
+					<span class='site'> <?php echo $oReferencia->get_endereco() ?>.</span>
+					<span class='acesso'><?php echo $oReferencia->get_acessado() ?>.</span>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</body>
+</hml>

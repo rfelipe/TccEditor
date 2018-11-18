@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html moznomarginboxes mozdisallowselectionprint>
-<head> <link rel="stylesheet" type="text/css" href="../Css/capa.php" />
+<head> <title><?php echo $oCapa->get_nomeProjeto() ?></title> 
+	<link rel="stylesheet" type="text/css" href="../Css/Css.php" />
 </head>
 	<body>
 		<div class='folha'>
@@ -18,7 +19,7 @@
 				<p class='p'>
 				</div>
 				<div>
-				<span class='cidade'><?php echo $oCapa->get_cidade() ?></span><p class='p0'>
+				<span class='cidade breack'><?php echo $oCapa->get_cidade() ?></span><p class='p0'>
 				<?php echo date ('Y') ?>
 				</div>		
 			</div>

@@ -13,11 +13,12 @@ require_once '../Modelos/classProjeto.php';
 
 <table width="60%" border="0" cellspacing="2" cellpadding="2" cellspacing="2">
 
-	<tr>Nome projeto
+	<tr>Nome projeto Criados
+		<hr>
 <?php
-	foreach($rst as $value){ echo $_SESSION['codprojeto']= $value->codprojeto; ?>
+	foreach($rst as $value){ ?>
 	<td scope="col">
-						<a  href="../Funcional/imprimir.php?id=<?php echo $value->codprojeto?>" >
+						<spam>IMPRIMIR  :</spam><a  href="../Funcional/imprimir.php?id=<?php echo $value->codprojeto?>" >
 							<?php print $nomeProjeto = $value->nomeprojeto; ?>
 							<?php $_SESSION['codprojeto']= $value->codprojeto;?>
 						</a>
@@ -26,7 +27,8 @@ require_once '../Modelos/classProjeto.php';
 
 <?php }?>
 </table>
+<hr>
 <p>
 <div>
-	<a  href="../SaveForm/FormNovoProjeto.php">:::CRIAR NOVO PROJETO:::</a>
+	<a  href="../SaveForm/FormNovoProjeto.php"><button >:::CRIAR NOVO PROJETO:::</button></a>
 </div>

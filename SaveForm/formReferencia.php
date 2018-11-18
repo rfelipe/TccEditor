@@ -15,7 +15,7 @@ require_once '../conecta.inc';
 				</label>
 			<p>
 				<label> Titulo:
-					<input type="text" name="texto">
+					<input type="text" name="titulo">
 				</label>
 			<p>				
 				<label> Endereço:

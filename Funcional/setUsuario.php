@@ -38,10 +38,7 @@
 <html>
     <body class="noprint">
         <p>
-        <a  href="../SaveForm/formCapa.php">::<?php echo "Criar Projeto:" ?>::</a>
-        
-        <a  href="">::<?php echo "||  Editar Projeto:" ?>::</a>
-        
-        <a  href="../Funcional/imprimir.php">::<?php echo "|| Imprimir Projeto:" ?>::</a>
+        <a  href="../SaveForm/formCapa.php">::<?php echo "Criar Projeto:" ?>::</a>  
+        <a  href="../Funcional/selecionartrabalhos.php">::<?php echo "|| Tela dos projetos:" ?>::</a>
     </body>
 </hml>

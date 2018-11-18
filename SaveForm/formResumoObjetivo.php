@@ -24,7 +24,7 @@ require_once '../Modelos/classCapa.php';
 </head>
 	<body>
 		<hr>
-		<h1>::Folha Rosto::</h1>
+		<h1>::Resumo Objetivo::</h1>
 			<form method='POST' action='formResumoObjetivoSave.php' enctype="multipart/form-data">
 				
 

@@ -1,6 +1,8 @@
 {
 
     "require": {
-        "stichoza/google-translate-php": "^3.2"
+        "stichoza/google-translate-php": "^3.2",
+        "mpdf/mpdf": "^7.1",
+        "dompdf/dompdf": "^0.8.2"
     }
 }
