@@ -19,10 +19,10 @@ require_once '../conecta.inc';
             );
 
 if(isset($_POST["ncapitulo"])){
-     echo("<script type='text/javascript'> alert('Capitulo salvo!'); location.href='formReferencia.php';</script>");
+     echo("<script type='text/javascript'> alert('Referencia salva!'); location.href='formReferencia.php';</script>");
 } 
 else if(isset($_POST["pular"])){
       echo("<script type='text/javascript'> alert('Projeto finalizado');
-        location.href='../Funcional/selecionaTrabalho.php'; </script>");
+        location.href='../Funcional/selecionatrabalhos.php'; </script>");
 }
 ?>

@@ -43,11 +43,11 @@
 		}
 			
 	//Inserir Pessoa
-			function insertPessoa($a,$b){
+			function insertPessoa($a,$b,$c){
 		    $conn=conecta();		
-			$statement = $conn->prepare('INSERT INTO pessoa(nome, senha) 
-			VALUES(?,?)');
-			$statement->execute(array($a,$b));					
+			$statement = $conn->prepare('INSERT INTO pessoa(nome, senha,email) 
+			VALUES(?,?,?)');
+			$statement->execute(array($a,$b,$c));					
 		}
 
 	//Inserir Dados Projeto;
@@ -69,18 +69,18 @@
 		}
 
 	//Inserir Dados folha de rosto;
-	function insertResumoRosto($a,$b,$c){
+	function insertResumoRosto($a,$b,$c,$d){
 		    $conn=conecta();		
-			$statement = $conn->prepare('INSERT INTO resumo(textoresumo, folharosto, codprojeto) 
-			VALUES(?,?,?)');
-			$statement->execute(array($a,$b,$c));					
-		}
-		//Inserir Dados Resumo objetivo;
-	function insertResumoObjetivo($a,$b,$c,$d){
-		    $conn=conecta();		
-			$statement = $conn->prepare('INSERT INTO resumo(textoresumo, folharosto, objetivo, codprojeto) 
+			$statement = $conn->prepare('INSERT INTO resumo(textoresumo, folharosto, codprojeto, orientador) 
 			VALUES(?,?,?,?)');
 			$statement->execute(array($a,$b,$c,$d));					
+		}
+		//Inserir Dados Resumo objetivo;
+	function insertResumoObjetivo($a,$b,$c,$d,$e){
+		    $conn=conecta();		
+			$statement = $conn->prepare('INSERT INTO resumo(textoresumo, folharosto, objetivo, codprojeto,orientador) 
+			VALUES(?,?,?,?,?)');
+			$statement->execute(array($a,$b,$c,$d,$e));					
 		}
 
 	//Inserir Capitulo;

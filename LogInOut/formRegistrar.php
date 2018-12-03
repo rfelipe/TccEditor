@@ -15,6 +15,9 @@
 					<input type="text" name="senha">
 				</label>
 			<p>
+				<label> Email:
+					<input type="email" name="email">
+				</label>
 
 			<input type="submit" value="Salvar" action="submit"> 
 			

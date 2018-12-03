@@ -39,6 +39,6 @@
     <body class="noprint">
         <p>
         <a  href="../SaveForm/formCapa.php">::<?php echo "Criar Projeto:" ?>::</a>  
-        <a  href="../Funcional/selecionartrabalhos.php">::<?php echo "|| Tela dos projetos:" ?>::</a>
+        <a  href="../Funcional/selecionatrabalhos.php">::<?php echo "|| Tela dos projetos:" ?>::</a>
     </body>
 </hml>

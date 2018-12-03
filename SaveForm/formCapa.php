@@ -9,7 +9,7 @@ require_once '../Funcional/setUsuario.php';
 </head>
 	<body>
 		<hr>
-		<h1>::Novo Projeto::</h1>
+		<h1>::Capa do Projeto::</h1>
 			<form method='POST' action='formCapaSave.php' enctype="multipart/form-data">
 
 				<label> Imagem logo da faculdade:
