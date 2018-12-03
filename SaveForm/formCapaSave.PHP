@@ -19,6 +19,7 @@ move_uploaded_file( $uploadfile, $uploaddir );
    $oCapa->set_nomeProjeto($_POST["nomeProjeto"]);     
    $oCapa->set_cidade($_POST["cidade"]);
 
+
    insertCapa( $oCapa->get_unidade(),
                $oCapa->get_curso(),
                $oCapa->get_imgCapa(),
@@ -26,7 +27,7 @@ move_uploaded_file( $uploadfile, $uploaddir );
                $oCapa->get_nomeFaculdade(),
                $oCapa->get_cidade(),
                $oCapa->get_nomePessoa(),
-               $oCapa->get_codProjeto()
+               $oCapa->get_codProjeto(),
             );
 
   echo("<script type='text/javascript'> alert('Inclcusão de Capa realizada com sucesso!'); location.href='formFolhaRosto.php';</script>");

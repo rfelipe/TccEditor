@@ -36,6 +36,10 @@ require_once '../Modelos/classCapa.php';
 				 <span class='nome'><?php echo $oCapa->get_nomePessoa() ?></span>
 				</label>
 			<p>	
+				<label>Orientador:
+					<input type="text" name="orientador">					
+				</label>
+			<p>	
 				<label>Natureza do trabalho:
 					<textarea  type="texto" name="natureza">					
 					</textarea>

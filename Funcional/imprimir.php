@@ -12,12 +12,19 @@ require_once '../vendor/dompdf/dompdf/Autoload.inc.php';
 
 
 $codprojeto = $_GET['id'];
+$codpessoa  = $_SESSION['codpessoa'];
 
 	$selecCapa 			= select('codprojeto',$codprojeto,'capa');
 	$selectResumo 		= select('codprojeto',$codprojeto,'resumo');
 	$selectAbstract		= select2('codprojeto',$codprojeto,'folharosto',2,'resumo');
 	$selectCapitulo		= select('codprojeto',$codprojeto,'capitulo');
 	$selectReferencia	= select('codprojeto',$codprojeto,'referencia');
+	$selectPessoa		= select('codpessoa',$codpessoa,'pessoa');
+
+	foreach ($selectPessoa as $key => $value) {
+			$email=$value->email;
+		}
+
 
 	$oCapa 			= new Capa(); 
 	$oFolhaRosto	= new resumo();
@@ -109,6 +116,7 @@ $codprojeto = $_GET['id'];
 			width:		". $tamanhoimagX."cm; 
 			height:		". $tamanhoImagY."cm;
 		}
+	
 	.folhaRosto{
 		align-items: 	". $centralizacao .";
 		text-align: 	". $centralizacao .";
@@ -160,10 +168,12 @@ $codprojeto = $_GET['id'];
 	}
 	.textoSimples{
 		font-size:". $objetivotamanhofonte."px;
+
 	}
 	.textoSimplesb{
 		font-size:". $objetivotamanhofonte."px;
 		font-weight:". ($objetivonegrito  == 1 ? 'bold': '') .";
+		text-transform: capitalize;
 	}
 	.textoCapitulo{
 		text-align:". $objetivocentralizacao .";
@@ -220,6 +230,9 @@ $codprojeto = $_GET['id'];
 	}
 	.titulolivro{
 	font-weight:bold;
+	}
+	.textoImagem{
+		text-align:left;
 	}"
 	;
 
@@ -268,7 +281,8 @@ $codprojeto = $_GET['id'];
 				$oFolhaRosto->set_codResumo($value->codresumo);
 				$oFolhaRosto->set_textoResumo($value->textoresumo);
 				$oFolhaRosto->set_codProjeto($value->codprojeto);
-		//require_once '../Imprimir/FolhaRosto.html';
+				$orientador=$value->orientador;
+
 			$html .="<body>
 					<div>
 						<div class='folhaRosto'>
@@ -280,7 +294,7 @@ $codprojeto = $_GET['id'];
 									<span>". $oFolhaRosto->get_textoResumo() ."</span>
 								</div>
 							<p class='prosto'>
-								<span class='nome'>colocar dados do orientador</span>
+								<span class='nome'>".$orientador."</span>
 								<p class='prosto'>
 								<div class='footer'>
 									<span class='cidade'>". $oCapa->get_cidade() ."
@@ -297,8 +311,6 @@ $codprojeto = $_GET['id'];
 				$oResumo->set_codResumo($value->codresumo);
 				$oResumo->set_textoResumo($value->textoresumo);
 				$oResumo->set_objetivo($value->objetivo);
-			
-		//require_once '../Imprimir/ResumoObjetivo.html';	
 		}
 
 		$html .="<body>
@@ -309,15 +321,15 @@ $codprojeto = $_GET['id'];
 						</div>
 						<p class='presumo'>
 							<div class='alinhadireita'>
-								<span class='textoSimplesb'". $oCapa->get_nomePessoa() ."</span>
+								<span class='textoSimplesb'>". $oCapa->get_nomePessoa() ."</span>
 									<p class='presumo'>
 								<span class='textoSimples'>Autor(a)</span>
 									<p class='presumo'>
-								<span class='textoSimplesb'>Colocar dados do orientador</span>
+								<span class='textoSimplesb'>".$orientador."</span>
 									<p class='presumo'>
 								<span class='textoSimples'>Orientador (a):Prof. ME.</span>
 									<p class='presumo'>
-								<span class='textoSimples'>meu email </span>
+								<span class='textoSimples'>". $email ."</span>
 								<p class='presumo'>
 							</div>
 						<p class='p'>
@@ -338,7 +350,6 @@ $codprojeto = $_GET['id'];
 				$oAbstract->set_textoResumo($y);
 				$x=TradutorApiGoogle($value->objetivo);
 				$oAbstract->set_objetivo($x);
-		//require_once '../Imprimir/ResumoObjetivoT.html';
 		}
 			$html .="<body>
 				<div>
@@ -348,15 +359,15 @@ $codprojeto = $_GET['id'];
 					</div>
 					<p class='presumo'>
 						<div class='alinhadireita'>
-							<span class='textoSimplesb'". $oCapa->get_nomePessoa()."</span>
+							<span class='textoSimplesb'>". $oCapa->get_nomePessoa()."</span>
 								<p class='presumo'>
 							<span class='textoSimples'>Autor(a)</span>
 								<p class='presumo'>
-							<span class='textoSimplesb'>Colocar dados do orientador</span>
+							<span class='textoSimplesb'>".$orientador."</span>
 								<p class='presumo'>
 							<span class='textoSimples'>Orientador (a):Prof. ME.</span>
 								<p class='presumo'>
-							<span class='textoSimples'>meu email </span>
+							<span class='textoSimples'>". $email . "</span>
 							<p class='presumo'>
 						</div>
 					<p class='p'>
@@ -382,8 +393,6 @@ $codprojeto = $_GET['id'];
 				}
 				$oCapitulo->set_codRefImagem($NtemImag);
 
-		//require_once '../Imprimir/Capitulos.html';
-
 					$html .="<body>
 					<div class='capitulo'>
 						<div class='textoCapitulo1'>
@@ -396,7 +405,7 @@ $codprojeto = $_GET['id'];
 								</span>
 							</div>
 								<p class='espaco'>
-							<div class='paragrafo'>
+							<div class='paragrafo textoImagem'>
 								<span class='textoImagem'>".$oCapitulo->get_subcod()."</span>
 								<img  class='' src='../ImagUp/".$oCapitulo->get_codRefImagem()."'>
 							</div>
@@ -419,7 +428,6 @@ $codprojeto = $_GET['id'];
 				     $oReferencia->set_titulo($value->titulo); 
 				     $oReferencia->set_endereco($value->endereco);
 				     $oReferencia->set_acessado($value->acessado);
-				    //require_once '../Imprimir/Referencia.html';
 
 			$html.="
 									
@@ -439,10 +447,7 @@ $codprojeto = $_GET['id'];
 use Dompdf\Dompdf;
 $dompdf = new Dompdf();
 $dompdf->loadHtml($html);
-// (Optional) Setup the paper size and orientation
 $dompdf->setPaper('A4', 'portrait');
-// Render the HTML as PDF
 $dompdf->render();
-// Output the generated PDF to Browser
 $dompdf->stream();
 ?>

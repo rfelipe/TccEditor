@@ -24,12 +24,16 @@ require_once '../Modelos/classCapa.php';
 </head>
 	<body>
 		<hr>
-		<h1>::Folha Rosto::</h1>
+		<h1>::Folha de Rosto::</h1>
 			<form method='POST' action='formFolhaRostoSave.php' enctype="multipart/form-data">
 				
 
 				<label> Nome Aluno:
 				 <span class='nome'><?php echo $oCapa->get_nomePessoa() ?></span>
+				</label>
+				<p>	
+				<label>Orientador:
+					<input type="text" name="orientador">					
 				</label>
 			<p>	
 				<label> Nome do Projeto:
